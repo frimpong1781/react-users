@@ -15,7 +15,6 @@ class AddUserForm extends Component {
         this.setState({
             [e.target.name] : e.target.value
         });
-        console.log(this.state)
     };
 
     handleSubmit = (e) => {
@@ -26,7 +25,6 @@ class AddUserForm extends Component {
             email: "",
             gen: ""
         })
-        console.log(this.state);
     };
 
     render() {
