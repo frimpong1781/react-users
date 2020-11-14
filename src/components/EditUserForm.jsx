@@ -24,7 +24,7 @@ class EditUserForm extends Component {
         this.setState({
             name: "",
             email: "",
-            gen: "",
+            gen: ""
         })
         this.props.closeModal()
     };
