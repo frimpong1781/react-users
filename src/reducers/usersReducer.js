@@ -1,9 +1,24 @@
 const initialState = {
     users: [
-        {name: "james", email: "hshdjsdj@yahoo.com", gen: 12},
-        {name: "Kwame", email: "frimpong1781@yahoo.com", gen: 12},
-        {name: "Owusu", email: "cybrotec@gmail.com", gen: 12}
-    ],
+        {
+          name: "James Frimpong",
+          email: "jfrimpong",
+          gen: 2,
+          id: "hhfjj"
+        },
+        {
+          name: "Princess Linda Mensah",
+          email: "linda@gmail.com",
+          gen: 2,
+          id: "hghghg"
+        },
+        {
+          name: "Janet Something",
+          email: "jane19@yahoo.com",
+          gen: 15,
+          id: "jgfjf"
+        }
+      ],
 };
 
 const usersReducer = (state = {initialState}, action) => {
