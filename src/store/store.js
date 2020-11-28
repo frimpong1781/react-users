@@ -1,6 +1,6 @@
 import {createStore, combineReducers} from 'redux';
 import usersReducer from '../reducers/usersReducer';
-import authreducer from '../reducers/authReducer';
+import authReducer from '../reducers/authReducer';
 
 // for creating single reducer, use the below code
 // export const store = createStore(usersReducer);
@@ -8,7 +8,7 @@ import authreducer from '../reducers/authReducer';
 // Use code below when creating multiples reducers
 export const store = createStore(
     combineReducers({
-        users: usersReducer,
-        auth: authreducer
+        usersState: usersReducer,
+        auth: authReducer
     })
 )
