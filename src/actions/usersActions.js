@@ -6,7 +6,24 @@ export const addUser = (newUser) => {
     newUser.id=Math.random().toString()
     return {
         type: "ADD_USER",
-        payload: newUser
+        payload: newUser,
     }
 }
 
+// action creator for deleting user
+export const deleteUser = (userId) => {
+    // checking to see if our action creator here is fired when the button is clicked using console.log
+    // console.log("action fired", userId)
+    return {
+        type: "DELETE_USER",
+        payload: userId,
+    }
+}
+
+// Action creator for editing user
+export const editUser = (updatedUser) => {
+    return {
+        type: "EDIT_USER",
+        payload: updatedUser, // userId can be fetch from updatedUser that's why userId is not included as parameter
+    }
+}
