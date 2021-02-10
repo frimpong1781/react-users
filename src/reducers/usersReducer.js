@@ -2,7 +2,7 @@ const initialState = {
     users: [
         {
           name: "James Frimpong",
-          email: "jfrimpong",
+          email: "jfrimpong@yahoo.com",
           gen: 2,
           id: "hhfjj"
         },

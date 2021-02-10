@@ -1,6 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Container, Row} from 'react-bootstrap';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { Container, Row } from 'react-bootstrap';
 import User from './User';
 
 const Users = (props) => {
@@ -22,8 +24,9 @@ const Users = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    usersData: state.usersState.users
+    usersData: state.usersState.users,
+    firestoreData: state.firestore
 })
 
-export default connect(mapStateToProps) (Users);
+export default compose(connect(mapStateToProps))(Users)
  

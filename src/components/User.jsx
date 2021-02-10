@@ -37,8 +37,12 @@ const User = (props) => {
                         </Card.Subtitle>
                         <Card.Title>{props.userInfo.name}</Card.Title>
                         <Card.Text>
-                            <p>Email: {props.userInfo.email}</p>
-                            <p>Gen: {props.userInfo.gen}</p>
+                            {/* <p>Email: {props.userInfo.email}</p> */}
+                            {/* <p>Gen: {props.userInfo.gen}</p> */}
+                            Email: {props.userInfo.email}
+                        </Card.Text>
+                        <Card.Text>
+                            Gen: {props.userInfo.gen}
                         </Card.Text>
                         <Card.Link href="#" onClick={handleShow}>Edit</Card.Link>
                         <Card.Link href="#">
