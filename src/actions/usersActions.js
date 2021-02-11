@@ -19,16 +19,29 @@ export const addUser = (newUser) => {
 export const deleteUser = (userId) => {
   // checking to see if our action creator here is fired when the button is clicked using console.log
   // console.log("action fired", userId)
-  return {
-    type: "DELETE_USER",
-    payload: userId,
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("users")
+      .doc(userId)
+      .delete()
+      .then(() => {
+        console.log("user deleted successfully!");
+      })
+      .catch((err) => {
+        console.log("An error occured!", err);
+      })
   };
 };
 
 // Action creator for editing user
 export const editUser = (updatedUser) => {
-  return {
-    // type: "EDIT_USER",
-    // payload: updatedUser, // userId can be fetch from updatedUser that's why userId is not included as parameter
-  };
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    firestore.collection("users").doc(updatedUser.id).update(updatedUser).then(() => {
+      console.log("user updated successfully!");
+    }).catch((err) => {
+      console.log("An error occured!", err);
+    })
+  }
 };
