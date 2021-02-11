@@ -4,7 +4,7 @@ import authReducer from '../reducers/authReducer';
 
 // New imports
 import firebaseObj from '../firebase/firebase';
-import { getFirebase, reactReduxFirebase } from 'react-redux-firebase';
+import { firebaseReducer, getFirebase, reactReduxFirebase } from 'react-redux-firebase';
 import { getFirestore, reduxFirestore, firestoreReducer } from 'redux-firestore';
 import thunk from 'redux-thunk';
 
@@ -15,6 +15,7 @@ import thunk from 'redux-thunk';
 const reducers =   combineReducers({
     usersState: usersReducer,
     firestore: firestoreReducer,
+    firebase: firebaseReducer,
     auth: authReducer
 });
 
