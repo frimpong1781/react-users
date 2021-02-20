@@ -4,26 +4,10 @@ import './App.css';
 import {Container, Row, Col } from 'react-bootstrap';
 import Users from './components/Users';
 import AddUserForm from './components/AddUserForm';
+import { logoutUser } from './actions/authActions';
+import {connect} from 'react-redux';
 
 class App extends Component {
-
-  // addNewUser = (user) => {
-  //   user.id=Math.random().toString()
-  //   this.setState({
-  //     users: [...this.state.users, user]
-  //   })
-  // };
-  // deleteUser = (id) => {
-  //   let undeletedUsers = this.state.users.filter((user) => user.id !== id);
-  //   this.setState({
-  //     users: undeletedUsers
-  //   })
-  // };
-  // editUser = (id, updatedUser) => {
-  //   this.setState({
-  //     users: this.state.users.map(user => user.id === id ? updatedUser : user)
-  //   })
-  // };
 
   render() {
   return (
@@ -37,7 +21,10 @@ class App extends Component {
           </Col>
           <Col>
           <h4>Codetrain Users</h4>
-          <br/>
+          <button 
+            className="btn btn-warning" 
+            onClick={() => this.props.logoutUser()}>Logout</button>
+          <br/><br />
             <Users 
               deleteUser={this.deleteUser} 
               editUser={this.editUser} 
@@ -50,4 +37,4 @@ class App extends Component {
 }
 }
 
-export default App;
+export default connect(null, { logoutUser }) (App);
