@@ -1,6 +1,6 @@
 import {createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import usersReducer from '../reducers/usersReducer';
-import authReducer from '../reducers/authReducer';
+// import authReducer from '../reducers/authReducer';
 
 // New imports
 import firebaseObj from '../firebase/firebase';
@@ -16,7 +16,7 @@ const reducers =   combineReducers({
     usersState: usersReducer,
     firestore: firestoreReducer,
     firebase: firebaseReducer,
-    auth: authReducer
+    // auth: authReducer
 });
 
 export const store = createStore(
